@@ -1,0 +1,59 @@
+<div class="alert alert-dark" role="alert">
+	To Do List
+</div>
+<div class="wrapper">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+				<th scope="col">Due Date</th>
+				<th scope="col">Is completed</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in toDoList">
+				<th scope="row">{{$index+1}}</th>
+				<td>{{item.name}}</td>
+				<td>{{item.date | date:'yyyy-MM-dd' }}</td>
+				<td><input type="button" ng-click="getDescription()" value="Details"> </td>
+				<td>
+					<span style="{{setStyle(item.completed)}}">{{showText(item.completed)}} </span>
+					<input type="checkbox" ng-model="item.completed">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="details">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Card title</h5>
+			<p class="card-text" ng-if="isShownDetail">{{description}}</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="wrapper">
+	<form name="add-item" ng-submit="addItem(toDoItem)">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="Enter item name" ng-model="toDoItem.name">
+		</div>
+		<div class="form-group">
+			<label for="desc">Description</label>
+			<input type="text" class="form-control" id="desc" placeholder="Description here" ng-model="toDoItem.desc">
+		</div>
+		<div class="form-group">
+			<label for="date">Due Date</label>
+			<input type="date" id="date" class="form-control" ng-model="toDoItem.date">
+		</div>
+		<div class="form-check">
+			<input type="checkbox" class="form-check-input" id="is-completed" ng-model="toDoItem.completed">
+			<label class="form-check-label" for="is-completed">Completed</label>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>

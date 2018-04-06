@@ -1,0 +1,17 @@
+<div class="wrapper">
+	<div form-group>
+		<label for="first">first value</label>
+		<input type="text" class="form-control" placeholder="first number" id="first" ng-model="val1">
+		<label for="second">second value</label>
+		<input type="text" class="form-control" placeholder="second number" id="second" ng-model="val2">
+	</div>
+	<hr>
+	<div>
+		<input type="button" value="+" ng-click="add()">
+		<input type="button" value="-" ng-click="sub()">
+		<input type="button" value="*" ng-click="mul()">
+		<input type="button" value="/" ng-click="div()">
+		<input type="text" disabled value="{{result}}">
+	</div>
+
+</div>

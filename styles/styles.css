@@ -1,0 +1,23 @@
+.card {
+	margin: 10px;
+}
+
+.wrapper {
+	margin-top: 20px;
+	width: 400px;
+	margin: auto;
+}
+
+.table-wrapper {
+	margin-top: 20px;
+	width: 600px;
+}
+
+.details {
+	position: relative;
+	width: 30%;
+	height: 300px;
+	float: right;
+	margin: 20px;
+	top: -100px;
+}

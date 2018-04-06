@@ -1,0 +1,13 @@
+<div class="alert alert-dark" role="alert">
+  ITVDN News
+</div>
+
+<div ng-repeat="event in events" class="card" style="width: 80rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{event.Title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{event.edate | date:'yyyy-MM-dd' }}</h6>
+    <p class="card-text">{{event.content}}</p>
+   <button type="button" class="btn btn-primary">Primary</button>
+  </div>
+</div>
+
